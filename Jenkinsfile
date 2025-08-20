@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'mkdir -p /opt/deployments && cp target/*.jar /opt/deployments/'
+        sh 'mkdir -p $WORKSPACE/deployments && cp target/*.jar $WORKSPACE/deployments/'
       }
     }
     stage('Run Deployed App') {
